@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//chuj 
 public class mousecontroll : MonoBehaviour {
     public Camera cam;
     private bool facingRight = false;
