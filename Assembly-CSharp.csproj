@@ -61,7 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\kontrola_kamery.cs" />
     <Compile Include="Assets\Scripts\Body.cs" />
+    <Compile Include="Assets\Scripts\Camera Controller.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\mousecontroll.cs" />
     <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
