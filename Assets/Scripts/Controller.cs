@@ -15,6 +15,8 @@ public class Controller : MonoBehaviour {
 	}
     private void FixedUpdate()
     {
+        Vector2 position = myRygidbody.position;
+        Debug.Log(facingRight);
         float horizontal = Input.GetAxis("Horizontal");
         HandleMovement(horizontal);
         anim.SetFloat("Speed", Mathf.Abs(horizontal));
