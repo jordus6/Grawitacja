@@ -12,11 +12,11 @@ public class mousecontroll : MonoBehaviour {
     public float sensibility;
     private Vector3 position,rgbp;
     private bool isPosition = false;
-    bool isInside = false;
+    private bool isInside = false;
+    private bool grabbed = false;
 	// Use this for initialization
 	void Start () {
         rgb = GetComponent<Rigidbody2D>();
-       
 
         if (cam == null) {
             cam = Camera.main;
@@ -27,47 +27,52 @@ public class mousecontroll : MonoBehaviour {
     void FixedUpdate () {
         position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         rgbp = rgb.position;
-               
+        isInside = false;
+        if ((rgbp.x - 0.5 < position.x) && (rgbp.x + 0.5 > position.x) && (rgbp.y - 0.5 < position.y) && (rgbp.y + 0.5 > position.y))
+        {
+            isInside = true;
+        }
+
+        if ((isInside == true && Input.GetMouseButtonDown(0) == true))
+        {
+            grabbed = true;
+        }       
+
         HandleMouseEvents();
         Debug.Log(isInside);
 	}
     void HandleMouseEvents()
     {
-        if ((rgbp.x - 0.5 < position.x) && (rgbp.x + 0.5 > position.x) && (rgbp.y - 0.5 < position.y) && (rgbp.y + 0.5 > position.y))
-        {
-            isInside = true;
-        }
-     
-        if (isInside)
-        {
-             velX = Input.GetAxis("Mouse X") / Time.fixedDeltaTime;
-             velY = Input.GetAxis("Mouse Y") / Time.fixedDeltaTime;
-             velocity = new Vector2(velX * sensibility, velY * sensibility);
-        }
-           
-      
         
-        if (Input.GetMouseButton(0) && isInside)
+
+        if (grabbed == true)
         {
+            velX = Input.GetAxis("Mouse X") / Time.fixedDeltaTime;
+            velY = Input.GetAxis("Mouse Y") / Time.fixedDeltaTime;
+            velocity = new Vector2(velX * sensibility, velY * sensibility);
+
             Vector3 rawPosition = cam.ScreenToWorldPoint(Input.mousePosition);
             Vector3 targetPosition = new Vector3(rawPosition.x, rawPosition.y);
             rgb.MovePosition(targetPosition);
-            rgb.velocity = velocity;
-            
+            rgb.velocity = velocity; 
         }
-        
-        if (Input.GetMouseButtonUp(0))
+        if (!grabbed){
+            velocity = new Vector2(0, 0);
+        }
+        if (Input.GetMouseButtonUp(0) && grabbed)
         {
             rgb.velocity = velocity;
-            isInside = false;
+            grabbed = false;
             
+            //isInside = false;
         }
 
-        if (rgb.velocity.x < 0 && !facingRight)
+
+        if (rgb.velocity.x < 0.00000000001 && !facingRight)
         {
             Flip();
         }
-        else if (rgb.velocity.x > 0 && facingRight)
+        else if (rgb.velocity.x > 0.0000000001 && facingRight)
         {
             Flip();
         }
