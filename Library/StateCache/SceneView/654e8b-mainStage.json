@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":489.46832275390627,"y":78.06771087646485,"z":-9.077392578125},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":916.4483642578125,"orthographic":true}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":25.404769897460939,"y":6.851360321044922,"z":-0.3046875},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":37.0036506652832,"orthographic":true}
+>>>>>>> origin/Jordan2
