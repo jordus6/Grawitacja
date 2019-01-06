@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class mousecontroll : MonoBehaviour {
     public GameObject charakter;
@@ -9,37 +10,63 @@ public class mousecontroll : MonoBehaviour {
     private Rigidbody2D rgb;
     private float velX, velY;
     private Vector2 velocity;
-    public float sensibility;
-    private Vector3 position,rgbp;
+    public float sensibility = 1f;
+    private Vector3 position, rgbp;
     private bool isPosition = false;
     private bool isInside = false;
     private bool grabbed = false;
-	// Use this for initialization
-	void Start () {
-        rgb = GetComponent<Rigidbody2D>();
+    private float xPositon, deltaXPosition;
+    public float minVelocity;
 
+    
+
+    // Use this for initialization
+    void Start () {
+        rgb = GetComponent<Rigidbody2D>();
+       
         if (cam == null) {
             cam = Camera.main;
         }
 	}
-    
+
     // Update is called once per frame
-    void FixedUpdate () {
-        position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        rgbp = rgb.position;
+    private void Update()
+    {
         isInside = false;
         if ((rgbp.x - 0.5 < position.x) && (rgbp.x + 0.5 > position.x) && (rgbp.y - 0.5 < position.y) && (rgbp.y + 0.5 > position.y))
         {
             isInside = true;
         }
 
-        if ((isInside == true && Input.GetMouseButtonDown(0) == true))
+        if ((isInside && Input.GetMouseButtonDown(0)))
         {
             grabbed = true;
-        }       
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            grabbed = false;
+        }
+        if (Input.GetMouseButtonUp(0) && grabbed)
+        {
+            rgb.velocity = velocity;
+            grabbed = false;
 
+            //isInside = false;
+        }
+
+    }
+    void FixedUpdate () {
+        xPositon = rgb.position.x;
+        position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        rgbp = rgb.position;
+       
+
+       
+       
         HandleMouseEvents();
-        Debug.Log(isInside);
+       
+       
+        Debug.Log(grabbed);
 	}
     void HandleMouseEvents()
     {
@@ -56,28 +83,20 @@ public class mousecontroll : MonoBehaviour {
             rgb.MovePosition(targetPosition);
             rgb.velocity = velocity; 
         }
-        if (!grabbed){
-            velocity = new Vector2(0, 0);
-        }
-        if (Input.GetMouseButtonUp(0) && grabbed)
-        {
-            rgb.velocity = velocity;
-            grabbed = false;
-            
-            //isInside = false;
-        }
-
-
-        if (rgb.velocity.x < 0.00000000001 && !facingRight)
-        {
-            Flip();
-        }
-        else if (rgb.velocity.x > 0.0000000001 && facingRight)
-        {
-            Flip();
-        }
         
         
+
+        if (Math.Abs(rgb.velocity.x) > minVelocity)
+        {
+            if (rgb.velocity.x < 0 && !facingRight)
+            {
+                Flip();
+            }
+            else if (rgb.velocity.x > 0 && facingRight)
+            {
+                Flip();
+            }
+        }
     }
 
     void Flip()
@@ -87,4 +106,9 @@ public class mousecontroll : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+    void setSensibility(float newSensibility)
+    {
+        sensibility = newSensibility;
+    }
+
 }
