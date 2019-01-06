@@ -6,25 +6,26 @@ using System;
 public class mousecontroll : MonoBehaviour {
     public GameObject charakter;
     public Camera cam;
+    public CircleCollider2D collider;
     private bool facingRight = false;
     private Rigidbody2D rgb;
     private float velX, velY;
     private Vector2 velocity;
     public float sensibility = 1f;
     private Vector3 position, rgbp;
-    private bool isPosition = false;
     private bool isInside = false;
     private bool grabbed = false;
-    private float xPositon, deltaXPosition;
-    public float minVelocity;
+    public float minVelocity = 0.3f;
 
     
 
     // Use this for initialization
     void Start () {
         rgb = GetComponent<Rigidbody2D>();
-       
-        if (cam == null) {
+        collider = GetComponent<CircleCollider2D>();
+
+        if (cam == null)
+        {
             cam = Camera.main;
         }
 	}
@@ -32,8 +33,12 @@ public class mousecontroll : MonoBehaviour {
     // Update is called once per frame
     private void Update()
     {
+        
+        //setSensibility(sensibility);
         isInside = false;
-        if ((rgbp.x - 0.5 < position.x) && (rgbp.x + 0.5 > position.x) && (rgbp.y - 0.5 < position.y) && (rgbp.y + 0.5 > position.y))
+        
+
+        if (collider.OverlapPoint(position))
         {
             isInside = true;
         }
@@ -56,7 +61,7 @@ public class mousecontroll : MonoBehaviour {
 
     }
     void FixedUpdate () {
-        xPositon = rgb.position.x;
+       
         position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         rgbp = rgb.position;
        
@@ -106,7 +111,7 @@ public class mousecontroll : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-    void setSensibility(float newSensibility)
+    public void setSensibility(float newSensibility)
     {
         sensibility = newSensibility;
     }
