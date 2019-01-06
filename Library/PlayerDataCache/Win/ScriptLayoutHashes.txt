@@ -1,9 +1,8 @@
 Win
 PlayerPath?
-C:/Users/MSI Apache Pro/Desktop/projekt/New Unity Project.exe
+C:/Users/MSI Apache Pro/Desktop/Grawitacja/Grawitacja.exe
 SceneListBegin?
 Assets/poprawki.unity
-Assets/Menu.unity
 SceneListEnd?
 0fb9b2f3b43c48cd185cf8d78cb775d1 Assembly-CSharp.dll:.mousecontroll
 d161543e6f462390e4dc5663d2909ef6 Assembly-CSharp.dll:.Controller
