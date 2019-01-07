@@ -6,7 +6,7 @@ public class MenuGlowne : MonoBehaviour
 {
     public void Zagraj()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("poprawki");
 
     }
     public void Zamknij()
