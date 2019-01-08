@@ -69,6 +69,8 @@
     <Compile Include="Assets\Scripts\mousecontroll.cs" />
     <Compile Include="Assets\Scripts\mousecontrollBlocks.cs" />
     <Compile Include="Assets\Scripts\Muzyka.cs" />
+    <Compile Include="Assets\Scripts\SoundSliderValue.cs" />
+    <Compile Include="Assets\Scripts\WskaznikiMenuOpcji.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

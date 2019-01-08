@@ -28,7 +28,9 @@ public class mousecontroll : MonoBehaviour {
         {
             cam = Camera.main;
         }
-	}
+        rgb.sharedMaterial.friction = 0.3f;
+        rgb.sharedMaterial.bounciness = 0.3f;
+    }
 
     // Update is called once per frame
     private void Update()

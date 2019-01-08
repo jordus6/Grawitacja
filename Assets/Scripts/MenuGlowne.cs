@@ -14,4 +14,11 @@ public class MenuGlowne : MonoBehaviour
         Debug.Log("Aplikacja zostala zamknieta!");
         Application.Quit();
     }
+    public void Level1()
+    {
+        SceneManager.LoadScene("poprawki");
+    }
+   
+
+
 }

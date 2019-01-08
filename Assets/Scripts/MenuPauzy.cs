@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuPauzy : MonoBehaviour
 {
@@ -37,5 +38,20 @@ public class MenuPauzy : MonoBehaviour
     public void Zamkniecie()
     {
         Debug.Log ("Zamykanie gry...");
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Wroc();
+    }
+    public void Level1()
+    {
+        SceneManager.LoadScene("poprawki");
+        Wroc();
+    }
+    public void Level2()
+    {
+        SceneManager.LoadScene("Level2");
+        Wroc();
     }
 }

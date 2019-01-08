@@ -17,6 +17,8 @@ public class mousecontrollBlocks : MonoBehaviour
     private bool isInside = false;
     private bool grabbed = false;
     public float minVelocity = 0.3f;
+    
+  
 
 
 
@@ -25,11 +27,14 @@ public class mousecontrollBlocks : MonoBehaviour
     {
         rgb = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
-
+       
         if (cam == null)
         {
             cam = Camera.main;
         }
+        rgb.sharedMaterial.friction = 0.3f;
+        rgb.sharedMaterial.bounciness = 0.3f;
+
     }
 
     // Update is called once per frame
