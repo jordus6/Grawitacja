@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- 
+using UnityEngine.SceneManagement;
+
+
 public class Muzyka : MonoBehaviour
 {
     // Reference to Audio Source component
@@ -21,6 +23,7 @@ public class Muzyka : MonoBehaviour
     }
     public void SetVolume(float vol)
     {
+        
         musicVolume = vol;
     }
 }

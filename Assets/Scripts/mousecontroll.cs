@@ -35,7 +35,7 @@ public class mousecontroll : MonoBehaviour {
     // Update is called once per frame
     private void Update()
     {
-        
+       // Debug.Log(rgb.sharedMaterial.bounciness);
         //setSensibility(sensibility);
         isInside = false;
         
@@ -73,7 +73,7 @@ public class mousecontroll : MonoBehaviour {
         HandleMouseEvents();
        
        
-        Debug.Log(grabbed);
+      
 	}
     void HandleMouseEvents()
     {

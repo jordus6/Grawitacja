@@ -61,9 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Camera Controller.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
-    <Compile Include="Assets\Scripts\kontrola_kamery.cs" />
     <Compile Include="Assets\Scripts\MenuGlowne.cs" />
     <Compile Include="Assets\Scripts\MenuPauzy.cs" />
     <Compile Include="Assets\Scripts\mousecontroll.cs" />

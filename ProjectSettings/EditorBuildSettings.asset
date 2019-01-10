@@ -5,18 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/proba.unity
-    guid: 68d308e4b6c365946b1b72ad111b917b
   - enabled: 1
-    path: Assets/Menu.unity
+    path: Assets/Scenes/Menu.unity
     guid: d2ffee5fa7819714f8f2b66d20ee1258
   - enabled: 1
-    path: Assets/Level2.unity
-    guid: 710ba58bc058d9e46b92d7dba55325a3
-  - enabled: 1
-    path: Assets/poprawki.unity
+    path: Assets/Scenes/poprawki.unity
     guid: 6d1cea850fd7898478e5d6d9202267bb
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 710ba58bc058d9e46b92d7dba55325a3
+  - enabled: 0
+    path: Assets/Scenes/proba.unity
+    guid: 68d308e4b6c365946b1b72ad111b917b
   - enabled: 0
     path: Assets/Grafika/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729

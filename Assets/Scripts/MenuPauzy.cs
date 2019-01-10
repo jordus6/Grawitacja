@@ -37,7 +37,8 @@ public class MenuPauzy : MonoBehaviour
     
     public void Zamkniecie()
     {
-        Debug.Log ("Zamykanie gry...");
+        SceneManager.LoadScene(0);
+        Wroc();
     }
     public void Restart()
     {

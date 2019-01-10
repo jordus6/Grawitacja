@@ -7,11 +7,17 @@ using System;
 public class WskaznikiMenuOpcji : MonoBehaviour
 {   
     
-    Text wartosc;
+    
+    Text napis;
+    
     // Start is called before the first frame update
     void Start()
     {
-        wartosc = GetComponent<Text>();
+       napis = GetComponent<Text>();
+       // slider = GetComponent<Slider>();
+       // suwakWartosc = slider.value;
+       // suwakWartosc = (float)Math.Round(suwakWartosc * 100f) / 100f;
+       // text.text = suwakWartosc.ToString();
         
     }
 
@@ -22,8 +28,8 @@ public class WskaznikiMenuOpcji : MonoBehaviour
     }
     public void textUpdate(float value)
     {
-        //masa.text = String.Format("{0:0.##}", value);
-        value = (float)Math.Round(value * 100f) / 100f;
-        wartosc.text = value.ToString();
+       float wartosc = (float)Math.Round(value * 100f) / 100f;
+
+       napis.text = wartosc.ToString();
     }
 }

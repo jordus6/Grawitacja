@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MenuGlowne : MonoBehaviour
 {
+    
+
+    
     public void Zagraj()
     {
         SceneManager.LoadScene("poprawki");
@@ -18,7 +21,11 @@ public class MenuGlowne : MonoBehaviour
     {
         SceneManager.LoadScene("poprawki");
     }
-   
+    public void Level2()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+
 
 
 }

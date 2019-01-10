@@ -1,10 +1,7 @@
 sceneSetups:
-- path: Assets/poprawki.unity
+- path: Assets/Scenes/Level2.unity
   isLoaded: 1
   isActive: 1
-- path: Assets/Menu.unity
-  isLoaded: 1
-  isActive: 0
-- path: Assets/Level2.unity
-  isLoaded: 1
+- path: Assets/Scenes/Menu.unity
+  isLoaded: 0
   isActive: 0
